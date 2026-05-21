@@ -1,12 +1,14 @@
-# Forge — Elite Software Engineering Skill
+# Forge & Debug — Software Engineering Skills
 
-A comprehensive AI coding skill that enforces professional-grade code quality across every dimension of software engineering.
+A collection of AI coding skills that enforce professional-grade code quality and systematic debugging workflows.
 
-## Overview
+## Skills
+
+### Forge — Elite Software Engineering
 
 Forge transforms AI coding assistants into principal-level software engineers. Every line of code produced follows a rigorous 12-phase workflow covering the full software development lifecycle.
 
-## Phases
+#### Phases
 
 | Phase | Focus |
 |---|---|
@@ -23,7 +25,7 @@ Forge transforms AI coding assistants into principal-level software engineers. E
 | 11 | Search & Research |
 | 12 | Code Review |
 
-## Reference Files
+#### Forge Reference Files
 
 | File | Description |
 |---|---|
@@ -34,6 +36,31 @@ Forge transforms AI coding assistants into principal-level software engineers. E
 | [testing.md](skills/forge/references/testing.md) | Mocking patterns and framework-specific testing |
 | [database.md](skills/forge/references/database.md) | Schema design, indexing, query optimization |
 | [api-design.md](skills/forge/references/api-design.md) | REST conventions, API design patterns |
+
+### Debug — Structured Debugging
+
+Debug enforces a hypothesis-verify-fix loop for methodically diagnosing and fixing bugs. It prevents jumping to fixes without confirmed root causes.
+
+#### Phases
+
+| Phase | Focus |
+|---|---|
+| 1 | Triage — Collect symptoms, environment, reproduction steps |
+| 2 | Hypothesis Formation — Rank 1-3 specific, falsifiable hypotheses |
+| 3 | Verify — Write targeted probes to test hypotheses |
+| 4 | Narrow Down — Iterate when hypotheses are wrong |
+| 5 | Fix — Minimal change after root cause is confirmed |
+| 6 | Verify the Fix — Confirm the original case passes |
+| 7 | Post-Mortem — Document why initial assumptions were wrong |
+| 8 | Summary — Brief handoff note for PRs or communication |
+
+#### Core Principles
+
+- No fix without confirmed cause
+- Probe is not the same as fix
+- Symptom is not the same as root cause
+- Log what you ruled out to prevent circular debugging
+- Post-mortem is not optional — it calibrates future debugging
 
 ## Usage
 
