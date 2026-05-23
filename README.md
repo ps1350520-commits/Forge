@@ -37,29 +37,42 @@ Forge transforms AI coding assistants into principal-level software engineers. E
 | [database.md](skills/forge/references/database.md) | Schema design, indexing, query optimization |
 | [api-design.md](skills/forge/references/api-design.md) | REST conventions, API design patterns |
 
-### Debug — Structured Debugging
+### Debug — Structured Debugging Discipline
 
-Debug enforces a hypothesis-verify-fix loop for methodically diagnosing and fixing bugs. It prevents jumping to fixes without confirmed root causes.
+A comprehensive debugging methodology combining hypothesis-verify-fix rigor with mantra-based constraints, falsification-first methodology, and breadcrumb ledger tracking.
+
+#### Mantra
+
+> 1. **First is reproducibility.** Can the issue be reproduced reliably?
+> 2. **Know the fail path.** Debugger first; then source trace + knob enumeration; then in-code instrumentation.
+> 3. **Question your hypothesis.** What would disprove it?
+> 4. **Every run is a breadcrumb.** Cross-reference all of them.
 
 #### Phases
 
 | Phase | Focus |
 |---|---|
 | 1 | Triage — Collect symptoms, environment, reproduction steps |
-| 2 | Hypothesis Formation — Rank 1-3 specific, falsifiable hypotheses |
-| 3 | Verify — Write targeted probes to test hypotheses |
-| 4 | Narrow Down — Iterate when hypotheses are wrong |
-| 5 | Fix — Minimal change after root cause is confirmed |
-| 6 | Verify the Fix — Confirm the original case passes |
-| 7 | Post-Mortem — Document why initial assumptions were wrong |
-| 8 | Summary — Brief handoff note for PRs or communication |
+| 2 | Reproduce Reliably — Build a fast, deterministic pass/fail signal |
+| 3 | Know the Fail Path — Debugger, source trace, instrumentation, bisection |
+| 4 | Hypothesis Formation — Rank 1-3 specific, falsifiable hypotheses |
+| 5 | Falsify — Disprove before you prove |
+| 6 | Narrow Down — Iterate when hypotheses are wrong, update ledger |
+| 7 | Fix — Minimal change after root cause is confirmed |
+| 8 | Verify the Fix — Confirm the original case passes, add regression test |
+| 9 | Breadcrumb Ledger — Running log of every experiment in the session |
+| 10 | Post-Mortem — Document why initial assumptions were wrong |
+| 11 | Summary Note — Brief handoff note for PRs or communication |
 
 #### Core Principles
 
 - No fix without confirmed cause
+- No hypothesis without repro
 - Probe is not the same as fix
 - Symptom is not the same as root cause
+- Disprove before you prove
 - Log what you ruled out to prevent circular debugging
+- Every run updates the ledger
 - Post-mortem is not optional — it calibrates future debugging
 
 ---
@@ -261,7 +274,7 @@ def test_list_todos_returns_empty_list():
 
 **Request:** "Use Debug — my login endpoint returns 500 but only in production."
 
-Debug would proceed through its 8 phases:
+Debug would proceed through its 11 phases:
 
 **Phase 1 — Triage:**
 - Symptom: POST /auth/login returns 500 in production, works locally
