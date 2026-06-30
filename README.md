@@ -1,14 +1,60 @@
 # Forge & Debug — Software Engineering Skills
 
-A collection of AI coding skills that enforce professional-grade code quality and systematic debugging workflows.
+> A collection of AI coding skills that enforce professional-grade code quality and systematic debugging workflows.
 
-## Skills
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+Forge and Debug turn an AI coding assistant into a disciplined engineer: Forge writes code through a rigorous 12-phase software lifecycle, and Debug hunts bugs with a hypothesis-driven, falsification-first method.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [The Skills](#the-skills)
+  - [Forge — Elite Software Engineering](#forge--elite-software-engineering)
+  - [Debug — Structured Debugging Discipline](#debug--structured-debugging-discipline)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Documentation](#documentation)
+- [License](#license)
+
+---
+
+## Overview
+
+| Skill | What it does | When to use it |
+|---|---|---|
+| **Forge** | Drives every coding task through a 12-phase workflow covering the full software development lifecycle. | Building, refactoring, or reviewing code. |
+| **Debug** | Applies a hypothesis → verify → fix methodology with breadcrumb tracking. | Diagnosing a bug, flaky test, or performance issue. |
+
+---
+
+## Quick Start
+
+1. **Copy the skills** into your project (or global config):
+   ```bash
+   # Into a specific project
+   cp -r skills /path/to/your-project/.opencode/
+
+   # Or into your global OpenCode config
+   cp -r skills ~/.config/opencode/
+   ```
+2. **Verify** your AI assistant detects the skills — they should appear when you ask it to list available skills.
+3. **Invoke Forge** on any coding task, and **Debug** whenever a bug appears.
+
+See [GETTING-STARTED.md](GETTING-STARTED.md) for a full walkthrough.
+
+---
+
+## The Skills
 
 ### Forge — Elite Software Engineering
 
-Forge transforms AI coding assistants into principal-level software engineers. Every line of code produced follows a rigorous 12-phase workflow covering the full software development lifecycle.
+Forge transforms AI coding assistants into principal-level software engineers. Every line of code follows a rigorous 12-phase workflow covering the full software development lifecycle.
 
-#### Phases
+#### The 12 Phases
 
 | Phase | Focus |
 |---|---|
@@ -25,7 +71,7 @@ Forge transforms AI coding assistants into principal-level software engineers. E
 | 11 | Search & Research |
 | 12 | Code Review |
 
-#### Forge Reference Files
+#### Reference Files
 
 | File | Description |
 |---|---|
@@ -37,18 +83,20 @@ Forge transforms AI coding assistants into principal-level software engineers. E
 | [database.md](skills/forge/references/database.md) | Schema design, indexing, query optimization |
 | [api-design.md](skills/forge/references/api-design.md) | REST conventions, API design patterns |
 
+---
+
 ### Debug — Structured Debugging Discipline
 
 A comprehensive debugging methodology combining hypothesis-verify-fix rigor with mantra-based constraints, falsification-first methodology, and breadcrumb ledger tracking.
 
-#### Mantra
+#### The Mantra
 
 > 1. **First is reproducibility.** Can the issue be reproduced reliably?
 > 2. **Know the fail path.** Debugger first; then source trace + knob enumeration; then in-code instrumentation.
 > 3. **Question your hypothesis.** What would disprove it?
 > 4. **Every run is a breadcrumb.** Cross-reference all of them.
 
-#### Phases
+#### The 11 Phases
 
 | Phase | Focus |
 |---|---|
@@ -77,35 +125,7 @@ A comprehensive debugging methodology combining hypothesis-verify-fix rigor with
 
 ---
 
-## Getting Started
-
-See [GETTING-STARTED.md](GETTING-STARTED.md) for step-by-step setup and walkthroughs.
-
-**Quick start:**
-1. Copy `skills/` into your project's `.opencode/` folder
-2. Open your AI coding assistant and invoke Forge on any coding task
-3. Invoke Debug when a bug appears
-
-## Philosophy
-
-See [PHILOSOPHY.md](PHILOSOPHY.md) for why Forge has 12 phases, why they're ordered this way, and what breaks when you skip them.
-
----
-
 ## Usage
-
-### Setup Steps
-
-1. **Clone or download** this repository
-2. **Copy the skills folder** into your project:
-   ```bash
-   # Option A: Copy into a specific project
-   cp -r skills /path/to/your-project/.opencode/
-
-   # Option B: Copy to global OpenCode config
-   cp -r skills ~/.config/opencode/
-   ```
-3. **Verify** your AI coding assistant detects the skills. They should appear when you ask it to list available skills.
 
 ### Invoking Forge
 
@@ -117,7 +137,7 @@ Ask your AI assistant to use Forge on any coding task:
 "Use Forge to refactor this module"
 ```
 
-Forge will run through its 12 phases automatically — understanding the goal, writing clean code, applying domain standards, adding tests, documenting, and more.
+Forge runs through its 12 phases automatically — understanding the goal, writing clean code, applying domain standards, adding tests, documenting, and more.
 
 ### Invoking Debug
 
@@ -135,7 +155,10 @@ Debug will triage, form hypotheses, write probes, confirm the root cause, then f
 
 ## Examples
 
-### Example 1: Building a Python API with Forge (12 Phases)
+<details>
+<summary><strong>Example 1 — Building a Python API with Forge (12 Phases)</strong></summary>
+
+<br>
 
 **Request:** "Use Forge to build a REST API for managing a todo list with Python and FastAPI."
 
@@ -268,13 +291,16 @@ def test_list_todos_returns_empty_list():
 
 **Phase 12 — Code Review:** Checklist applied — correctness, completeness, security, performance, testability, readability, consistency.
 
----
+</details>
 
-### Example 2: Diagnosing a Bug with Debug Methodology
+<details>
+<summary><strong>Example 2 — Diagnosing a Bug with the Debug Methodology</strong></summary>
+
+<br>
 
 **Request:** "Use Debug — my login endpoint returns 500 but only in production."
 
-Debug would proceed through its 11 phases:
+Debug would proceed through its phases:
 
 **Phase 1 — Triage:**
 - Symptom: POST /auth/login returns 500 in production, works locally
@@ -364,8 +390,19 @@ Files: schemas.py (LoginSchema.password field)
 Risk:  low — adds validation, no behavior change for valid inputs
 ```
 
+</details>
+
+---
+
+## Documentation
+
+| Document | What's inside |
+|---|---|
+| [GETTING-STARTED.md](GETTING-STARTED.md) | Step-by-step setup and walkthroughs. |
+| [PHILOSOPHY.md](PHILOSOPHY.md) | Why Forge has 12 phases, why they're ordered this way, and what breaks when you skip them. |
+
 ---
 
 ## License
 
-See individual files for license information.
+Released under the [MIT License](LICENSE).
